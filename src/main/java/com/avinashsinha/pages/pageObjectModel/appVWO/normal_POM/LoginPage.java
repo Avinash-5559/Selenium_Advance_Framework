@@ -1,4 +1,4 @@
-package com.avinashsinha.pages.pageObjectModel.appVWO;
+package com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM;
 
 import com.avinashsinha.utils.WaitHelpers;
 import org.openqa.selenium.By;

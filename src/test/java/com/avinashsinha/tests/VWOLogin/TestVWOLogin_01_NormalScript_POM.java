@@ -1,7 +1,7 @@
-package com.avinashsinha.tests;
+package com.avinashsinha.tests.VWOLogin;
 
-import com.avinashsinha.pages.pageObjectModel.appVWO.DashboardPage;
-import com.avinashsinha.pages.pageObjectModel.appVWO.LoginPage;
+import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.DashboardPage;
+import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.LoginPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.openqa.selenium.WebDriver;
