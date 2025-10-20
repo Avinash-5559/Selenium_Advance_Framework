@@ -1,4 +1,4 @@
-package com.avinashsinha.tests.pom.VWOLogin;
+package com.avinashsinha.tests.pom.appVWO;
 
 import com.avinashsinha.driver.DriverManager;
 import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.DashboardPage;
@@ -6,12 +6,16 @@ import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.LoginPage;
 import com.avinashsinha.utils.PropertiesReader;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TestVWOLogin_02_PropertyReader_DriverManager_normalPOM {
+public class TestAppVWOLoginPage_02_PropertyReader_DriverManager_normalPOM {
+
+    private static final Logger logger= LogManager.getLogger(TestAppVWOLoginPage_02_PropertyReader_DriverManager_normalPOM.class);
 
     @Test
     @Description("TC#1 : Verify that with Invalid Username and Password, get error message on the Login Page")
@@ -21,9 +25,13 @@ public class TestVWOLogin_02_PropertyReader_DriverManager_normalPOM {
         //Step 1. Driver Manager Code
         DriverManager.openBrowser();
 
+        logger.info("Starting the TestCases Page Object Model");
+
         //Step 2. Page Class Code (POM Code)
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
         String errorMsg = loginPage.loginToVWOLoginInvalidCreds(PropertiesReader.readKey("invalid_username"), PropertiesReader.readKey("invalid_password"));
+
+        logger.info("Finishing the TestCases Page Object Model");
 
         //Step 3. Assertions
         assertThat(errorMsg).isNotBlank().isNotEmpty().isNotNull();
@@ -42,12 +50,16 @@ public class TestVWOLogin_02_PropertyReader_DriverManager_normalPOM {
         //Step 1. Driver Manager Code
         DriverManager.openBrowser();
 
+        logger.info("Starting the TestCases Page Object Model");
+
         //Step 2. Page Class Code (POM Code)
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
         loginPage.loginToVWOLoginValidCreds(PropertiesReader.readKey("username"),PropertiesReader.readKey("password"));
 
         DashboardPage dashboardPage = new DashboardPage(DriverManager.getDriver());
         String userNameLoggedIn = dashboardPage.loggedInUserName();
+
+        logger.isErrorEnabled();
 
         //Step 3. Assertions
         assertThat(userNameLoggedIn).isNotBlank().isNotEmpty().isNotNull();

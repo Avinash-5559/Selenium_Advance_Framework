@@ -1,4 +1,4 @@
-package com.avinashsinha.tests.pom.VWOLogin;
+package com.avinashsinha.tests.pom.appVWO;
 
 import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.DashboardPage;
 import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.LoginPage;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class TestVWOLogin_01_NormalScript_POM {
+public class TestAppVWOLoginPage_01_NormalScript_POM {
 
     @Test
     @Description("TC#1 : Verify that with Invalid Username and Password, get error message on the Login Page")

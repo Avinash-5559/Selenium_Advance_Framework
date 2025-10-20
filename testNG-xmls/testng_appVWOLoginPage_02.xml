@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/Selenium_Advance_Framework">
         <classes>
-            <class name="com.avinashsinha.tests.VWOLogin.TestVWOLogin_02_PropertyReader_DriverManager_normalPOM"/>
+            <class name="com.avinashsinha.tests.pom.appVWO.TestAppVWOLoginPage_02_PropertyReader_DriverManager_normalPOM"/>
         </classes>
     </test>
 </suite>
