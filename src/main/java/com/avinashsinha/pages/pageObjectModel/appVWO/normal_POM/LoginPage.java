@@ -24,6 +24,11 @@ public class LoginPage {
     public String loginToVWOLoginInvalidCreds(String usr, String pwd) {
 
         driver.get("https://app.vwo.com/#/login");
+
+        WaitHelpers.checkVisibility(driver,username,5);
+        WaitHelpers.checkVisibility(driver,password,5);
+        WaitHelpers.waitForElementToBeClickable(driver,signButton);
+
         driver.findElement(username).sendKeys(usr);
         driver.findElement(password).sendKeys(pwd);
         driver.findElement(signButton).click();

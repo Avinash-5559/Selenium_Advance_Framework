@@ -1,4 +1,4 @@
-package com.avinashsinha.tests.VWOLogin;
+package com.avinashsinha.tests.pom.VWOLogin;
 
 import com.avinashsinha.driver.DriverManager;
 import com.avinashsinha.pages.pageObjectModel.appVWO.normal_POM.DashboardPage;
