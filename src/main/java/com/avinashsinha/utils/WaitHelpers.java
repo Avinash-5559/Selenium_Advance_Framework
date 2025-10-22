@@ -97,4 +97,11 @@ public class WaitHelpers {
         return getDriver().findElement(key);
     }
 
+    public static void urlContains(WebDriver driver, String locator) {
+
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.urlContains(locator));
+
+    }
+
 }
