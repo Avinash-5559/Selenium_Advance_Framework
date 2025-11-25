@@ -50,66 +50,125 @@ It demonstrates a **hybrid test automation architecture**, combining **Page Obje
 ```bash
 Selenium_Advance_Framework/
 │
-├── .idea/                                              # IntelliJ project files
-├── .mvn/                                               # Maven wrapper files
-├── allure-results/                                     # Allure report results
-├── failure_screenshots/                                # Screenshots captured on test failures
-├── logs/                                               # Log files generated during execution
+├── .idea/                                                                                      # IntelliJ project files
+├── .mvn/                                                                                       # Maven wrapper files
+├── allure-results/                                                                             # Allure report results
+├── failure_screenshots/                                                                        # Screenshots from failed tests
+├── logs/									
+│   └── test.log                                                                                # Test execution logs
+│									
+├── src/									
+│   ├── main/									
+│   │   ├── java/com.avinashsinha/									
+│   │   │   ├── base/									
+│   │   │   │   └── CommonToAllPage.java                                                        # Base class for all Pages
+│   │   │   │
+│   │   │   ├── driver/
+│   │   │   │   └── DriverManager.java                                                          # WebDriver manager
+│   │   │   │
+│   │   │   ├── pages/
+│   │   │   │   ├── pageFactory/
+│   │   │   │   │   ├── appVWO/
+│   │   │   │   │   │   ├── DashboardPage_PF.java
+│   │   │   │   │   │   └── LoginPage_PF.java
+│   │   │   │   │   │
+│   │   │   │   │   ├── katalonCURA/
+│   │   │   │   │   │   ├── BookingPage_PF.java
+│   │   │   │   │   │   ├── LoginPage_PF.java
+│   │   │   │   │   │   ├── MakeAppointmentPage_PF.java
+│   │   │   │   │   │   └── SummaryPage_PF.java
+│   │   │   │   │   │
+│   │   │   │   │   └── orangeHRM/
+│   │   │   │   │       ├── EmployeeListHomePage_PF.java
+│   │   │   │   │       └── LoginPage_PF.java
+│   │   │   │   │
+│   │   │   │   └── pageObjectModel/
+│   │   │   │       ├── appVWO/
+│   │   │   │       │   ├── improved_POM/
+│   │   │   │       │   │   ├── DashboardPage.java
+│   │   │   │       │   │   └── LoginPage.java
+│   │   │   │       │   │
+│   │   │   │       │   └── normal_POM/
+│   │   │   │       │       ├── DashboardPage.java
+│   │   │   │       │       └── LoginPage.java
+│   │   │   │       │
+│   │   │   │       ├── katalonCURA/
+│   │   │   │       │   ├── BookingPage.java
+│   │   │   │       │   ├── LoginPage.java
+│   │   │   │       │   ├── MakeAppointmentPage.java
+│   │   │   │       │   └── SummaryPage.java
+│   │   │   │       │
+│   │   │   │       └── orangeHRM/
+│   │   │   │           ├── EmployeeListHomePage.java
+│   │   │   │           └── LoginPage.java
+│   │   │   │
+│   │   │   └── utils/
+│   │   │       ├── PropertiesReader.java                                                       # Property reader utility
+│   │   │       ├── UtilExcel.java                                                              # Excel helper
+│   │   │       └── WaitHelpers.java                                                            # Explicit wait helpers
+│   │   │									
+│   │   └── resources/									
+│   │       ├── data.properties                                                                 # Environment & test config
+│   │       ├── log4j2.xml                                                                      # Logging configuration
+│   │       └── TestData.xlsx                                                                   # Excel test dataset
+│   │									
+│   └── test/									
+│       └── java/com.avinashsinha/									
+│           ├── base/									
+│           │   └── CommonToAllTest.java                                                        # Base class for all tests
+│           │
+│           ├── listeners/
+│           │   ├── RetryAnalyzer.java                                                          # Retry logic
+│           │   ├── RetryListeners.java                                                         # Retry listener
+│           │   └── ScreenshotListeners.java                                                    # Capture screenshot on failure
+│           │
+│           └── tests/
+│               ├── pageFactory/
+│               │   ├── appVWO/
+│               │   │   └── TestAppVWLoginPage_PF.java
+│               │   │
+│               │   ├── katalonCURA/
+│               │   │   └── TestKatalonCURALoginPage_PF.java
+│               │   │
+│               │   └── orangeHRM/
+│               │       └── TestOrangeHRMLoginPage_PF.java
+│               │
+│               └── pom/
+│                   ├── appVWO/
+│                   │   ├── DDT/
+│                   │   │   └── TestAppVWLoginPage_DDT.java
+│                   │   ├── TestAppVWLoginPage_01_NormalScript_POM.java
+│                   │   ├── TestAppVWLoginPage_02_PropertyReader_DriverManager_POM.java
+│                   │   ├── TestAppVWLoginPage_03_PropertyReader_DriverManager_POM.java
+│                   │   ├── TestAppVWLoginPage_04_PropertyReader_DriverManager_POM.java
+│                   │   ├── TestAppVWLoginPage_RetryListeners.java
+│                   │   └── TestAppVWLoginPage_RetryListeners_ScreenshotListeners.java
+│                   │
+│                   ├── katalonCURA/
+│                   │   └── TestKatalonCURALoginPage_01.java
+│                   │
+│                   └── orangeHRM/
+│                       └── TestOrangeHRMLoginPage_01.java
 │
-├── src/
-│   ├── main/java/com/avinashsinha/
-│   │   ├── base/
-│   │   │   └── CommonToAllPage.java
-│   │   ├── driver/
-│   │   │   └── DriverManager.java
-│   │   ├── pages/
-│   │   │   ├── pageFactory/
-│   │   │   │   ├── appVWO/
-│   │   │   │   ├── katalonCURA/
-│   │   │   │   └── orangeHRM/
-│   │   │   └── pageObjectModel/
-│   │   │       ├── appVWO/
-│   │   │       ├── katalonCURA/
-│   │   │       └── orangeHRM/
-│   │   └── utils/
-│   │       ├── PropertiesReader.java
-│   │       ├── UtilExcel.java
-│   │       └── WaitHelpers.java
-│   │
-│   └── test/java/com/avinashsinha/
-│       ├── base/
-│       │   └── CommonToAllTest.java
-│       ├── listeners/
-│       │   ├── RetryAnalyzer.java
-│       │   ├── RetryListeners.java
-│       │   └── ScreenshotListeners.java
-│       └── tests/
-│           ├── pageFactory/
-│           │   ├── appVWO/
-│           │   ├── katalonCURA/
-│           │   └── orangeHRM/
-│           └── pom/
-│               ├── appVWO/
-│               ├── katalonCURA/
-│               └── orangeHRM/
-│
-│   └── resources/
-│       ├── data.properties
-│       ├── log4j2.xml
-│       └── TestData.xlsx
-│
-├── testNG-xmls/                                        # Organized TestNG suite XMLs
-│   ├── testng_appVWOLoginPage_01.xml
-│   ├── testng_appVWOLoginPage_PF.xml
-│   ├── testng_appVWOLoginPage_RetryListeners.xml
+├── testNG-xmls/                                                                                # Organized TestNG suite XMLs
+│   ├── testng_appVWLoginPage_01.xml
+│   ├── testng_appVWLoginPage_02.xml
+│   ├── testng_appVWLoginPage_03.xml
+│   ├── testng_appVWLoginPage_04.xml
+│   ├── testng_appVWLoginPage_DDT.xml
+│   ├── testng_appVWLoginPage_PF.xml
+│   ├── testng_appVWLoginPage_RetryListeners.xml
+│   ├── testng_appVWLoginPage_RetryListenersScreenshotListeners.xml
 │   ├── testng_KatalonCURALoginPage_01.xml
-│   ├── testng_OrangeHRMLoginPage_PF.xml
-│   └── ... (more suite files)
+│   ├── testng_KatalonCURALoginPage_PF.xml
+│   ├── testng_OrangeHRMLoginPage_01.xml
+│   └── testng_OrangeHRMLoginPage_PF.xml
+│   
 │
-├── pom.xml                                             # Maven configuration
+├── pom.xml                                                                                     # Maven configuration
 ├── .gitignore
+│
 └── README.md
-
 
 ```
 ---
