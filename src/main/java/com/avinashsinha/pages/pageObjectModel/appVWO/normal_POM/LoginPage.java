@@ -13,14 +13,14 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    //Step 1 : These are Page Locators
+    //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
     private By username = By.id("login-username");
     private By password = By.id("login-password");
     private By signButton = By.id("js-login-btn");
     private By errorMessage = By.id("js-notification-box-msg");
     //private By signBySSO = By.xpath("//button[text()='Sign in using SSO']");
 
-    //Step 2 : These are Page Actions
+    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
     public String loginToVWOLoginInvalidCreds(String usr, String pwd) {
 
         driver.get("https://app.vwo.com/#/login");

@@ -15,12 +15,12 @@ public class LoginPage extends CommonToAllPage {
         this.driver = driver;
     }
 
-    //Step 1 : These are Page Locators
+    //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
     private By username = By.xpath("//input[@placeholder='Username']");
     private By password = By.xpath("//input[@placeholder='Password']");
     private By submitButton = By.xpath("//button[normalize-space()='Login']");
 
-    //Step 2 : These are Page Actions
+    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
     public void loginToOrangeHRMCreds(String usr, String pwd) {
 
         openOrangeHRMUrl();
