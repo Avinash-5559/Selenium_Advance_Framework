@@ -15,7 +15,7 @@ public class BookingPage extends CommonToAllPage {
         this.driver = driver;
     }
 
-    //Step 1 : These are Page Locators
+    //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
     private By checkBox = By.xpath("//input[@id='chk_hospotal_readmission']");
     private By radioButton = By.xpath("//input[@id='radio_program_medicaid']");
     private By calendar = By.xpath("//input[@id='txt_visit_date']");
@@ -26,7 +26,7 @@ public class BookingPage extends CommonToAllPage {
     private By comment = By.xpath("//textarea[@id='txt_comment']");
     private By bookAppointment = By.xpath("//button[@id='btn-book-appointment']");
 
-    //Step 2 : These are Page Actions
+    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
     public void fillAllDetailsOnBookingPage() {
 
         WaitHelpers.urlContains(driver, PropertiesReader.readKey("katalon_bookingURL"));
