@@ -17,11 +17,11 @@ public class DashboardPage_PF extends CommonToAllPage {
         PageFactory.initElements(driver, this);
     }
 
-    //Step 1 : These are Page Locators
+    //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
     @FindBy(css="[data-qa='lufexuloga']")
     private WebElement userNameOnDashboard;
 
-    //Step 2 : These are Page Actions
+    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
     public String loggedInUserName() {
         WaitHelpers.visibilityOfElement(userNameOnDashboard);
         return getText(userNameOnDashboard);
