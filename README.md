@@ -3,11 +3,12 @@
 ![Java](https://img.shields.io/badge/Java-11%2B-007396?logo=java&logoColor=white)
 ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-IDE-000000?logo=intellijidea&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-Build%20Tool-C71A36?logo=apachemaven&logoColor=white)
-![TestNG](https://img.shields.io/badge/TestNG-Framework-FF6C37?logo=testng&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-Web%20Automation-43B02A?logo=selenium&logoColor=white)
-![Log4j](https://img.shields.io/badge/Log4j-Logging%20Framework-CC0000?logo=apache&logoColor=white)
-![Apache POI](https://img.shields.io/badge/Apache%20POI-Excel%20DataDriven-2496ED?logo=apache&logoColor=white)
+![TestNG](https://img.shields.io/badge/TestNG-Framework-FF6C37?logo=testng&logoColor=white)
+![AssertJ](https://img.shields.io/badge/AssertJ-Assertions-6DB33F)
 ![Allure](https://img.shields.io/badge/Allure-Reports-FF69B4?logo=qameta&logoColor=white)
+![Log4j2](https://img.shields.io/badge/Log4j2-Logging-CC0000?logo=apache&logoColor=white)
+![Apache POI](https://img.shields.io/badge/Apache%20POI-Excel%20DataDriven-2496ED?logo=apache&logoColor=white)
 
 ---
 
@@ -16,6 +17,19 @@
 This repository contains a **Selenium Advanced Automation Framework** built using **Java**, **Selenium WebDriver**, **TestNG**, and **Maven**.
 
 It demonstrates a **hybrid test automation architecture**, combining **Page Object Model (POM)** and **Page Factory**, **Data-Driven Testing (Apache POI)**, **TestNG Listeners**, **Log4j Logging**, and **Retry logic** — creating a robust, maintainable, and reusable automation framework.
+
+---
+
+## ⚙️ Tech Stack
+
+- **Java 11+**
+- **IntelliJ IDEA** – IDE for development
+- **Maven** – Build & dependency management
+- **Selenium WebDriver** – Browser automation
+- **TestNG** – Testing framework
+- **Log4j2** – Centralized logging and debugging
+- **Apache POI** – Excel-based data handling
+- **Allure Reports** – Reporting framework
 
 ---
 
@@ -32,16 +46,43 @@ It demonstrates a **hybrid test automation architecture**, combining **Page Obje
 
 ---
 
-## ⚙️ Tech Stack
+## 🧩 Framework Highlights
 
-- **Java 11+**
-- **IntelliJ IDEA** – IDE for development
-- **Maven** – Build & dependency management
-- **Selenium WebDriver** – Browser automation
-- **TestNG** – Testing framework
-- **Log4j** – Centralized logging and debugging
-- **Apache POI** – Excel-based data handling
-- **Allure Reports** – Reporting framework
+### 🧱 Base Classes
+
+- **`CommonToAllPage.java`** – Base class for all page objects (shared web actions & utilities)
+- **`CommonToAllTest.java`** – Base class for all test cases (setup, teardown, and configuration)
+
+##
+
+### 🧪 Utilities
+
+- **`DriverManager.java`** – Centralized WebDriver lifecycle and thread-safe driver management
+- **`PropertiesReader.java`** – Loads configuration values from properties files
+- **`UtilExcel.java`** – Excel-driven data utility powered by Apache POI
+- **`WaitHelpers.java`** – Utility for explicit, fluent, and conditional waits
+
+##
+
+### 🔁 Listeners
+
+- **`RetryAnalyzer.java`** – Automatically retries failed tests
+- **`RetryListeners.java`** – Integrates retry logic into TestNG
+- **`ScreenshotListeners.java`** – Captures and stores screenshots on test failures
+
+## 
+
+### 📚 Modules Overview
+
+| Module / Category   | Description                                   |
+| :------------------ | :-------------------------------------------- |
+| **appVWO**          | Test cases related to app.vwo.com             |
+| **katalonCURA**     | Automation for Katalon CURA Healthcare        |
+| **orangeHRM**       | Tests for OrangeHRM login scenarios           |
+| **pageFactory**     | PageFactory-based framework examples          |
+| **pageObjectModel** | Standard Page Object Model implementation     |
+| **listeners**       | Retry and screenshot functionality demos      |
+| **dataDrivenTests** | Excel-based login automation using Apache POI |
 
 ---
 
@@ -176,9 +217,11 @@ Selenium_Advance_Framework/
 ## ▶️ Running Tests
 
 ### Run a Specific TestNG Suite
+
 ```bash
 mvn clean test -DsuiteXmlFile=testng_appVWOLoginPage_01.xml
 ```
+
 #### Commonly Used TestNG Suites
 
 | TestNG File                                 | Purpose                          |
@@ -194,6 +237,7 @@ mvn clean test -DsuiteXmlFile=testng_appVWOLoginPage_01.xml
 ## 📊 Reporting
 
 ### Generate Allure Report
+
 ```bash
 allure serve allure-results
 ```
@@ -206,51 +250,12 @@ Example Allure dashboard view:
 
 ---
 
-## 🧩 Framework Highlights
-
-### 🧱 Base Classes
-
-- **CommonToAllPage.java** – Base class for all page objects (shared web actions & utilities)
-- **CommonToAllTest.java** – Base class for all test cases (setup, teardown, and configuration)
-
-##
-
-### ⚙️ Utilities
-
-- **DriverManager.java** – Centralized WebDriver lifecycle and thread-safe driver management
-- **PropertiesReader.java** – Loads configuration values from properties files
-- **UtilExcel.java** – Excel-driven data utility powered by Apache POI
-- **WaitHelpers.java** – Utility for explicit, fluent, and conditional waits
-
-##
-
-### 🔁 Listeners
-
-- **RetryAnalyzer.java** – Automatically retries failed tests
-- **RetryListeners.java** – Integrates retry logic into TestNG
-- **ScreenshotListeners.java** – Captures and stores screenshots on test failures
-
-## 
-
-### 📚 Modules Overview
-
-| Module / Category   | Description                                   |
-| :------------------ | :-------------------------------------------- |
-| **appVWO**          | Test cases related to app.vwo.com             |
-| **katalonCURA**     | Automation for Katalon CURA Healthcare        |
-| **orangeHRM**       | Tests for OrangeHRM login scenarios           |
-| **pageFactory**     | PageFactory-based framework examples          |
-| **pageObjectModel** | Standard Page Object Model implementation     |
-| **listeners**       | Retry and screenshot functionality demos      |
-| **dataDrivenTests** | Excel-based login automation using Apache POI |
-
----
-
 ## 📌 Author
 👤 Avinash Sinha
 
 ---
 
 🧠 This framework is built for **advanced Selenium automation learning and practice**, focusing on **real-world framework design**, **scalability**, **reusability**, and **maintainability** — powered by **Selenium**, **TestNG**, and **Maven**.
+
 
 ---
