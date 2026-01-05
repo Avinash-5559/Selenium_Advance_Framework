@@ -242,7 +242,7 @@ mvn clean test -DsuiteXmlFile=testng_appVWOLoginPage_01.xml
 allure serve allure-results
 ```
 
-This opens a **beautiful interactive report** in your browser, showing execution summary, test logs, and screenshots for failed tests.
+This opens a **beautiful, interactive report** in your browser, displaying an execution summary, test logs, and screenshots for failed tests.
 
 Example Allure dashboard view:
 
@@ -251,11 +251,11 @@ Example Allure dashboard view:
 ---
 
 ## 📌 Author
+
 👤 Avinash Sinha
 
 ---
 
 🧠 This framework is built for **advanced Selenium automation learning and practice**, focusing on **real-world framework design**, **scalability**, **reusability**, and **maintainability** — powered by **Selenium**, **TestNG**, and **Maven**.
-
 
 ---
