@@ -26,7 +26,7 @@ public class BookingPage extends CommonToAllPage {
     private By comment = By.xpath("//textarea[@id='txt_comment']");
     private By bookAppointment = By.xpath("//button[@id='btn-book-appointment']");
 
-    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
+    //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void fillAllDetailsOnBookingPage() {
 
         WaitHelpers.urlContains(driver, PropertiesReader.readKey("katalon_bookingURL"));

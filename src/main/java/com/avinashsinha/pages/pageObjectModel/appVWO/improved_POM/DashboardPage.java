@@ -17,7 +17,7 @@ public class DashboardPage extends CommonToAllPage {
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
     By userNameOnDashboard = By.cssSelector("[data-qa='lufexuloga']");
 
-    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
+    //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public String loggedInUserName() {
         WaitHelpers.visibilityOfElement(userNameOnDashboard);
         return getText(userNameOnDashboard);
