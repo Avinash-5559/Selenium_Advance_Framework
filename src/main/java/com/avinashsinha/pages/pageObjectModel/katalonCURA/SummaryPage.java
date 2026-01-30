@@ -21,7 +21,7 @@ public class SummaryPage extends CommonToAllPage {
     private By sideBar = By.xpath("//i[@class='fa fa-bars']");
     private By logout = By.linkText("Logout");
 
-    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
+    //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void checkAllDetailsOnSummaryPage() {
 
         WaitHelpers.urlContains(driver, PropertiesReader.readKey("katalon_summaryURL"));
