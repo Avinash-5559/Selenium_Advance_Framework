@@ -32,6 +32,7 @@ public class DriverManager {
             case "edge":
                 EdgeOptions edgeOptions = new EdgeOptions();
                 edgeOptions.addArguments("--inprivate");
+                //edgeOptions.addArguments("--headless");
                 driver = new EdgeDriver(edgeOptions);
                 driver.manage().deleteAllCookies();
                 driver.manage().window().maximize();
@@ -40,6 +41,7 @@ public class DriverManager {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments(" --incognito");
+                //chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
                 driver.manage().deleteAllCookies();
                 driver.manage().window().maximize();
@@ -48,6 +50,7 @@ public class DriverManager {
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("-private-window");
+                //firefoxOptions.addArguments("--headless");
                 driver = new FirefoxDriver(firefoxOptions);
                 driver.manage().deleteAllCookies();
                 driver.manage().window().maximize();
