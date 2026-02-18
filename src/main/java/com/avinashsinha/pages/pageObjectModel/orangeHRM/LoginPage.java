@@ -20,7 +20,7 @@ public class LoginPage extends CommonToAllPage {
     private By password = By.xpath("//input[@placeholder='Password']");
     private By submitButton = By.xpath("//button[normalize-space()='Login']");
 
-    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
+    //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void loginToOrangeHRMCreds(String usr, String pwd) {
 
         openOrangeHRMUrl();
