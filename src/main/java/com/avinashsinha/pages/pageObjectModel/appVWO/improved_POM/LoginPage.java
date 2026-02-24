@@ -21,7 +21,7 @@ public class LoginPage extends CommonToAllPage {
     private By errorMessage = By.id("js-notification-box-msg");
     //private By signBySSO = By.xpath("//button[text()='Sign in using SSO']");
 
-    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
+    //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public String loginToVWOLoginInvalidCreds(String usr, String pwd) {
 
         openVWOUrl();
