@@ -20,7 +20,7 @@ public class LoginPage extends CommonToAllPage {
     private By password = By.id("txt-password");
     private By loginButton = By.id("btn-login");
 
-    //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
+    //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void loginToKatalonCURACreds() {
 
         WaitHelpers.urlContains(driver,PropertiesReader.readKey("katalon_loginURL"));
