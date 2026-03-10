@@ -40,6 +40,7 @@ public class LoginPage_PF extends CommonToAllPage {
         clickElement(submitButton);
 
         WaitHelpers.waitJVM(5000);
+
     }
 
 }

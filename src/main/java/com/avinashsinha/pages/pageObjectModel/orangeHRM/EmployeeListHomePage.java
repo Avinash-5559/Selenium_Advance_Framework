@@ -16,7 +16,7 @@ public class EmployeeListHomePage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    By userNameOnDashboard = By.xpath("//h6[normalize-space()='PIM']");
+    private By userNameOnDashboard = By.xpath("//h6[normalize-space()='PIM']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public String loggedInUserName() {
