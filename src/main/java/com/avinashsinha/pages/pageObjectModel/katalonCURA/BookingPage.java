@@ -16,38 +16,38 @@ public class BookingPage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By checkBox = By.xpath("//input[@id='chk_hospotal_readmission']");
-    private By radioButton = By.xpath("//input[@id='radio_program_medicaid']");
-    private By calendar = By.xpath("//input[@id='txt_visit_date']");
-    private By openCalendar = By.xpath("//div[contains(@class,'datepicker-dropdown')]");
-    private By currentMonth = By.xpath("(//th[@class='datepicker-switch'])[1]");
-    private By next = By.xpath("(//th[@class='next'])[1]");
-    private By day = By.xpath("(//td[@class='day'])[26]");
-    private By comment = By.xpath("//textarea[@id='txt_comment']");
-    private By bookAppointment = By.xpath("//button[@id='btn-book-appointment']");
+    private static final By CHECK_BOX = By.xpath("//input[@id='chk_hospotal_readmission']");
+    private static final By RADIO_BUTTON = By.xpath("//input[@id='radio_program_medicaid']");
+    private static final By CALENDAR = By.xpath("//input[@id='txt_visit_date']");
+    private static final By OPEN_CALENDAR = By.xpath("//div[contains(@class,'datepicker-dropdown')]");
+    private static final By CURRENT_MONTH = By.xpath("(//th[@class='datepicker-switch'])[1]");
+    private static final By NEXT = By.xpath("(//th[@class='next'])[1]");
+    private static final By DAY = By.xpath("(//td[@class='day'])[26]");
+    private static final By COMMENT = By.xpath("//textarea[@id='txt_comment']");
+    private static final By BOOK_APPOINTMENT = By.xpath("//button[@id='btn-book-appointment']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void fillAllDetailsOnBookingPage() {
 
         WaitHelpers.urlContains(driver, PropertiesReader.readKey("katalon_bookingURL"));
 
-        clickElement(checkBox);
-        clickElement(radioButton);
-        clickElement(calendar);
+        clickElement(CHECK_BOX);
+        clickElement(RADIO_BUTTON);
+        clickElement(CALENDAR);
 
-        WaitHelpers.presenceOfElement(driver, openCalendar);
+        WaitHelpers.presenceOfElement(driver, OPEN_CALENDAR);
 
-        while (!getText(currentMonth).equals("July 2026")) {
+        while (!getText(CURRENT_MONTH).equals("July 2026")) {
 
-            clickElement(next);
-            getText(currentMonth);
+            clickElement(NEXT);
+            getText(CURRENT_MONTH);
 
         }
 
-        clickElement(day);
+        clickElement(DAY);
 
-        enterInput(comment, PropertiesReader.readKey("katalon_comment"));
-        clickElement(bookAppointment);
+        enterInput(COMMENT, PropertiesReader.readKey("katalon_comment"));
+        clickElement(BOOK_APPOINTMENT);
 
     }
 

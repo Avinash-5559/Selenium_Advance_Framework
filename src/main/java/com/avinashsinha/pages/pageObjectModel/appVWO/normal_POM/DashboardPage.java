@@ -13,10 +13,10 @@ public class DashboardPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By userNameOnDashborad = By.cssSelector("[data-qa='lufexuloga']");
+    private static final By USER_NAME_ON_DASHBOARD = By.cssSelector("[data-qa='lufexuloga']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public String loggedInUserName() {
-        return driver.findElement(userNameOnDashborad).getText();
+        return driver.findElement(USER_NAME_ON_DASHBOARD).getText();
     }
 }

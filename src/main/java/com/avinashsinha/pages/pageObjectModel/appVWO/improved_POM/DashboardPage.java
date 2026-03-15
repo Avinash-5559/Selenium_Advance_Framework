@@ -15,11 +15,11 @@ public class DashboardPage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    By userNameOnDashboard = By.cssSelector("[data-qa='lufexuloga']");
+    private static final By USER_NAME_ON_DASHBOARD = By.cssSelector("[data-qa='lufexuloga']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public String loggedInUserName() {
-        WaitHelpers.visibilityOfElement(userNameOnDashboard);
-        return getText(userNameOnDashboard);
+        WaitHelpers.visibilityOfElement(USER_NAME_ON_DASHBOARD);
+        return getText(USER_NAME_ON_DASHBOARD);
     }
 }
