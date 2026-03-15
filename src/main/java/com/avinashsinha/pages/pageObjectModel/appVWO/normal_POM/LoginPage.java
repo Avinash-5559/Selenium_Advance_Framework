@@ -14,10 +14,10 @@ public class LoginPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By username = By.id("login-username");
-    private By password = By.id("login-password");
-    private By signButton = By.id("js-login-btn");
-    private By errorMessage = By.id("js-notification-box-msg");
+    private static final By USERNAME = By.id("login-username");
+    private static final By PASSWORD = By.id("login-password");
+    private static final By SIGN_BUTTON = By.id("js-login-btn");
+    private static final By ERROR_MESSAGE = By.id("js-notification-box-msg");
     //private By signBySSO = By.xpath("//button[text()='Sign in using SSO']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
@@ -25,27 +25,27 @@ public class LoginPage {
 
         driver.get("https://app.vwo.com/#/login");
 
-        WaitHelpers.checkVisibility(driver,username,5);
-        WaitHelpers.checkVisibility(driver,password,5);
-        WaitHelpers.waitForElementToBeClickable(driver,signButton);
+        WaitHelpers.checkVisibility(driver, USERNAME,5);
+        WaitHelpers.checkVisibility(driver, PASSWORD,5);
+        WaitHelpers.waitForElementToBeClickable(driver, SIGN_BUTTON);
 
-        driver.findElement(username).sendKeys(usr);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signButton).click();
+        driver.findElement(USERNAME).sendKeys(usr);
+        driver.findElement(PASSWORD).sendKeys(pwd);
+        driver.findElement(SIGN_BUTTON).click();
 
-        WaitHelpers.checkVisibility(driver, errorMessage);
+        WaitHelpers.checkVisibility(driver, ERROR_MESSAGE);
 
-        String errorMessage_Text = driver.findElement(errorMessage).getText();
-        return errorMessage_Text;
+        String errorMessageText = driver.findElement(ERROR_MESSAGE).getText();
+        return errorMessageText;
 
     }
 
     public void loginToVWOLoginValidCreds(String usr, String pwd) {
 
         driver.get("https://app.vwo.com/#/login");
-        driver.findElement(username).sendKeys(usr);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signButton).click();
+        driver.findElement(USERNAME).sendKeys(usr);
+        driver.findElement(PASSWORD).sendKeys(pwd);
+        driver.findElement(SIGN_BUTTON).click();
 
     }
 

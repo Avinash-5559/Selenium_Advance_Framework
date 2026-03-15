@@ -16,18 +16,18 @@ public class LoginPage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By username = By.id("txt-username");
-    private By password = By.id("txt-password");
-    private By loginButton = By.id("btn-login");
+    private static final By USERNAME = By.id("txt-username");
+    private static final By PASSWORD = By.id("txt-password");
+    private static final By LOGIN_BUTTON = By.id("btn-login");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void loginToKatalonCURACreds() {
 
         WaitHelpers.urlContains(driver,PropertiesReader.readKey("katalon_loginURL"));
 
-        enterInput(username, PropertiesReader.readKey("katalon_username"));
-        enterInput(password, PropertiesReader.readKey("katalon_password"));
-        clickElement(loginButton);
+        enterInput(USERNAME, PropertiesReader.readKey("katalon_username"));
+        enterInput(PASSWORD, PropertiesReader.readKey("katalon_password"));
+        clickElement(LOGIN_BUTTON);
 
     }
 

@@ -15,10 +15,10 @@ public class LoginPage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By username = By.id("login-username");
-    private By password = By.id("login-password");
-    private By signButton = By.id("js-login-btn");
-    private By errorMessage = By.id("js-notification-box-msg");
+    private static final By USERNAME = By.id("login-username");
+    private static final By PASSWORD = By.id("login-password");
+    private static final By SIGN_BUTTON = By.id("js-login-btn");
+    private static final By ERROR_MESSAGE = By.id("js-notification-box-msg");
     //private By signBySSO = By.xpath("//button[text()='Sign in using SSO']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
@@ -26,30 +26,30 @@ public class LoginPage extends CommonToAllPage {
 
         openVWOUrl();
 
-        WaitHelpers.checkVisibility(driver,username,5);
-        WaitHelpers.checkVisibility(driver,password,5);
-        WaitHelpers.waitForElementToBeClickable(driver,signButton);
+        WaitHelpers.checkVisibility(driver, USERNAME,5);
+        WaitHelpers.checkVisibility(driver, PASSWORD,5);
+        WaitHelpers.waitForElementToBeClickable(driver, SIGN_BUTTON);
 
-        enterInput(username, usr);
-        enterInput(password, pwd);
-        clickElement(signButton);
+        enterInput(USERNAME, usr);
+        enterInput(PASSWORD, pwd);
+        clickElement(SIGN_BUTTON);
 
-        WaitHelpers.checkVisibility(driver, errorMessage);
+        WaitHelpers.checkVisibility(driver, ERROR_MESSAGE);
 
-        return getText(errorMessage);
+        return getText(ERROR_MESSAGE);
     }
 
     public void loginToVWOLoginValidCreds(String usr, String pwd) {
 
         openVWOUrl();
 
-        WaitHelpers.checkVisibility(driver,username,5);
-        WaitHelpers.checkVisibility(driver,password,5);
-        WaitHelpers.waitForElementToBeClickable(driver,signButton);
+        WaitHelpers.checkVisibility(driver, USERNAME,5);
+        WaitHelpers.checkVisibility(driver, PASSWORD,5);
+        WaitHelpers.waitForElementToBeClickable(driver, SIGN_BUTTON);
 
-        enterInput(username, usr);
-        enterInput(password, pwd);
-        clickElement(signButton);
+        enterInput(USERNAME, usr);
+        enterInput(PASSWORD, pwd);
+        clickElement(SIGN_BUTTON);
 
     }
 

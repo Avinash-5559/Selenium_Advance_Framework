@@ -16,9 +16,9 @@ public class LoginPage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By username = By.xpath("//input[@placeholder='Username']");
-    private By password = By.xpath("//input[@placeholder='Password']");
-    private By submitButton = By.xpath("//button[normalize-space()='Login']");
+    private static final By USERNAME = By.xpath("//input[@placeholder='Username']");
+    private static final By PASSWORD = By.xpath("//input[@placeholder='Password']");
+    private static final By SUBMIT_BUTTON = By.xpath("//button[normalize-space()='Login']");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void loginToOrangeHRMCreds(String usr, String pwd) {
@@ -27,9 +27,9 @@ public class LoginPage extends CommonToAllPage {
 
         waitJVM(5000);
 
-        enterInput(username, usr);
-        enterInput(password, pwd);
-        clickElement(submitButton);
+        enterInput(USERNAME, usr);
+        enterInput(PASSWORD, pwd);
+        clickElement(SUBMIT_BUTTON);
 
         waitJVM(5000);
 
