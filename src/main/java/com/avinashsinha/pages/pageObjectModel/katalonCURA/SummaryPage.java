@@ -16,20 +16,20 @@ public class SummaryPage extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    private By confirmationText = By.xpath("//h2[normalize-space()='Appointment Confirmation']");
-    private By commentText = By.xpath("//p[@id='comment']");
-    private By sideBar = By.xpath("//i[@class='fa fa-bars']");
-    private By logout = By.linkText("Logout");
+    private static final By CONFIRMATION_TEXT = By.xpath("//h2[normalize-space()='Appointment Confirmation']");
+    private static final By COMMENT_TEXT = By.xpath("//p[@id='comment']");
+    private static final By SIDE_BAR = By.xpath("//i[@class='fa fa-bars']");
+    private static final By LOGOUT = By.linkText("Logout");
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviors or Instance Methods or Member Methods
     public void checkAllDetailsOnSummaryPage() {
 
         WaitHelpers.urlContains(driver, PropertiesReader.readKey("katalon_summaryURL"));
 
-        if (getText(commentText).equals(PropertiesReader.readKey("katalon_comment"))) {
+        if (getText(COMMENT_TEXT).equals(PropertiesReader.readKey("katalon_comment"))) {
 
-            clickElement(sideBar);
-            clickElement(logout);
+            clickElement(SIDE_BAR);
+            clickElement(LOGOUT);
 
             WaitHelpers.urlContains(driver, PropertiesReader.readKey("katalon_makeAppointmentURL"));
 
