@@ -1,5 +1,6 @@
 package com.avinashsinha.listeners;
 
+import com.avinashsinha.driver.DriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -21,7 +22,7 @@ public class ScreenshotListeners implements ITestListener {
 
         Object testClass = result.getInstance();
 
-        WebDriver driver = getDriver();
+        WebDriver driver = DriverManager.getDriver();
 
         String methodName = result.getName();
 
@@ -44,4 +45,15 @@ public class ScreenshotListeners implements ITestListener {
         }
 
     }
+
+    @Override
+    public void onTestStart(ITestResult result) {
+        System.out.println("Starting test: " + result.getName());
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        System.out.println("Test passed: " + result.getName());
+    }
+
 }

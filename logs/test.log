@@ -73,3 +73,12 @@
 2026-03-10 23:33:06 INFO  TestAppVWOLoginPage_03_PropertyReader_DriverManager_improvedPOM - Starting the TestCases Page Object Model
 2026-03-10 23:35:36 INFO  TestAppVWOLoginPage_RetryListeners - Starting the Testcases Page Object Model
 2026-03-10 23:36:18 INFO  TestAppVWOLoginPage_RetryListeners - Starting the Testcases Page Object Model
+2026-03-22 10:52:58 INFO  TestOrangeHRMLoginPage_01 - Starting the TestCases Page Object Model
+2026-03-22 10:53:15 INFO  TestOrangeHRMLoginPage_01 - Finishing the TestCases Page Object Model
+2026-03-22 11:21:13 INFO  TestOrangeHRMLoginPage_01 - Starting the TestCases Page Object Model
+2026-03-22 11:21:31 INFO  TestOrangeHRMLoginPage_01 - Finishing the TestCases Page Object Model
+2026-03-22 11:23:18 INFO  TestKatalonCURALoginPage_01 - Starting the TestCases Page Object Model
+2026-03-22 11:23:25 INFO  TestKatalonCURALoginPage_01 - Finishing the TestCases Page Object Model
+2026-03-22 11:23:52 INFO  TestAppVWOLoginPage_04_PropertyReader_DriverManager_CommonToAll_improvedPOM - Starting the TestCases Page Object Model
+2026-03-22 11:23:57 INFO  TestAppVWOLoginPage_04_PropertyReader_DriverManager_CommonToAll_improvedPOM - Finishing the TestCases Page Factory
+2026-03-22 11:23:58 INFO  TestAppVWOLoginPage_04_PropertyReader_DriverManager_CommonToAll_improvedPOM - Starting the TestCases Page Object Model
