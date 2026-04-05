@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestAppVWOLoginPage_03_PropertyReader_DriverManager_improvedPOM {
 
-    private static final Logger logger= LogManager.getLogger(TestAppVWOLoginPage_03_PropertyReader_DriverManager_improvedPOM.class);
+    private static final Logger LOGGER = LogManager.getLogger(TestAppVWOLoginPage_03_PropertyReader_DriverManager_improvedPOM.class);
 
     @Test
     @Description("TC#1 : Verify that with Invalid Username and Password, get error message on the Login Page")
@@ -25,13 +25,13 @@ public class TestAppVWOLoginPage_03_PropertyReader_DriverManager_improvedPOM {
         //Step 1. Driver Manager Code
         DriverManager.openBrowser();
 
-        logger.info("Starting the TestCases Page Object Model");
+        LOGGER.info("Starting the TestCases Page Object Model");
 
         //Step 2. Page Class Code (POM Code)
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
         String errorMsg = loginPage.loginToVWOLoginInvalidCreds(PropertiesReader.readKey("invalid_username"), PropertiesReader.readKey("invalid_password"));
 
-        logger.info("Finishing the TestCases Page Object Model");
+        LOGGER.info("Finishing the TestCases Page Object Model");
 
         //Step 3. Assertions
         assertThat(errorMsg).isNotBlank().isNotEmpty().isNotNull();
@@ -50,16 +50,16 @@ public class TestAppVWOLoginPage_03_PropertyReader_DriverManager_improvedPOM {
         //Step 1. Driver Manager Code
         DriverManager.openBrowser();
 
-        logger.info("Starting the TestCases Page Object Model");
+        LOGGER.info("Starting the TestCases Page Object Model");
 
         //Step 2. Page Class Code (POM Code)
         LoginPage loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.loginToVWOLoginValidCreds(PropertiesReader.readKey("username"),PropertiesReader.readKey("password"));
+        loginPage.loginToVWOLoginValidCreds(PropertiesReader.readKey("username"), PropertiesReader.readKey("password"));
 
         DashboardPage dashboardPage = new DashboardPage(DriverManager.getDriver());
         String userNameLoggedIn = dashboardPage.loggedInUserName();
 
-        logger.isErrorEnabled();
+        LOGGER.isErrorEnabled();
 
         //Step 3. Assertions
         assertThat(userNameLoggedIn).isNotBlank().isNotEmpty().isNotNull();
