@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestOrangHRMLoginPage_PF extends CommonToAllTest {
 
-    private static final Logger logger= LogManager.getLogger(TestOrangHRMLoginPage_PF.class);
+    private static final Logger logger = LogManager.getLogger(TestOrangHRMLoginPage_PF.class);
 
     @Test
     @Description("TC#1 : Verify that with Username and Password, redirect to the Dashboard Page")

@@ -36,7 +36,9 @@ public class UtilExcel {
             sheet = book.getSheet(sheetName);
 
         } catch (IOException e) {
+
             System.out.println("Either File Not Found! or Workbook Not Created!");
+            throw new RuntimeException(e);
 
         }
 
@@ -51,5 +53,6 @@ public class UtilExcel {
         }
 
         return data;
+
     }
 }
