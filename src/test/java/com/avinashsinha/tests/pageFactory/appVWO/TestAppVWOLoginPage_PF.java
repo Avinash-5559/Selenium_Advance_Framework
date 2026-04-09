@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestAppVWOLoginPage_PF extends CommonToAllTest {
 
-    private static final Logger logger= LogManager.getLogger(TestAppVWOLoginPage_PF.class);
+    private static final Logger logger = LogManager.getLogger(TestAppVWOLoginPage_PF.class);
 
     @Test
     @Description("TC#1 : Verify that with Invalid Username and Password, get error message on the Login Page")
