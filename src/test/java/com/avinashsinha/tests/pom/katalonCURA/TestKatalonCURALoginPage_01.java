@@ -20,14 +20,14 @@ import static com.avinashsinha.driver.DriverManager.getDriver;
 @Test(retryAnalyzer = RetryAnalyzer.class)
 public class TestKatalonCURALoginPage_01 extends CommonToAllTest {
 
-    private static final Logger logger = LogManager.getLogger(TestKatalonCURALoginPage_01.class);
+    private static final Logger LOGGER = LogManager.getLogger(TestKatalonCURALoginPage_01.class);
 
     @Test
     @Description("TC#1 : Verify that Booking the Appointment and redirect to the Summary Page")
     @Owner("Avinash Sinha")
     public void test_KatalonCURA() {
 
-        logger.info("Starting the TestCases Page Object Model");
+        LOGGER.info("Starting the TestCases Page Object Model");
 
         MakeAppointmentPage makeAppointmentKatalonCURA = new MakeAppointmentPage(getDriver());
         makeAppointmentKatalonCURA.clickToMakeAppointmentBtn();
@@ -41,7 +41,7 @@ public class TestKatalonCURALoginPage_01 extends CommonToAllTest {
         SummaryPage summaryPage = new SummaryPage(getDriver());
         summaryPage.checkAllDetailsOnSummaryPage();
 
-        logger.info("Finishing the TestCases Page Object Model");
+        LOGGER.info("Finishing the TestCases Page Object Model");
 
     }
 
