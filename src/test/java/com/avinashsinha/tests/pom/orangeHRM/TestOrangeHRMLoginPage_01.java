@@ -16,14 +16,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestOrangeHRMLoginPage_01 extends CommonToAllTest {
 
-    private static final Logger logger= LogManager.getLogger(TestOrangeHRMLoginPage_01.class);
+    private static final Logger LOGGER = LogManager.getLogger(TestOrangeHRMLoginPage_01.class);
 
     @Test
     @Description("TC#1 : Verify that with Username and Password, redirect to the Dashboard Page")
     @Owner("Avinash Sinha")
     public void test_OrangeHRM() {
 
-        logger.info("Starting the TestCases Page Object Model");
+        LOGGER.info("Starting the TestCases Page Object Model");
 
         LoginPage loginOrangeHRMPage = new LoginPage(getDriver());
         loginOrangeHRMPage.loginToOrangeHRMCreds(PropertiesReader.readKey("ohr_username"), PropertiesReader.readKey("ohr_password"));
@@ -32,7 +32,7 @@ public class TestOrangeHRMLoginPage_01 extends CommonToAllTest {
 
         String loggedInUserName = employeeListHomePage.loggedInUserName();
 
-        logger.info("Finishing the TestCases Page Object Model");
+        LOGGER.info("Finishing the TestCases Page Object Model");
 
         assertThat(loggedInUserName).isNotBlank().isNotNull().isNotEmpty();
         Assert.assertEquals(loggedInUserName, PropertiesReader.readKey("ohr_expected_username"));
