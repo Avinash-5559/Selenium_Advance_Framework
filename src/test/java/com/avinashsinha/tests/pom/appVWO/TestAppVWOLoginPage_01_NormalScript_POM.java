@@ -36,6 +36,7 @@ public class TestAppVWOLoginPage_01_NormalScript_POM {
         Assert.assertEquals(errorMsg, "Your email, password, IP address or location did not match");
 
         driver.quit();
+
     }
 
     @Test
@@ -63,6 +64,7 @@ public class TestAppVWOLoginPage_01_NormalScript_POM {
         Assert.assertEquals(userNameLoggedIn, "Aman");
 
         driver.quit();
+
     }
 
 }

@@ -66,5 +66,6 @@ public class TestAppVWOLoginPage_02_PropertyReader_DriverManager_normalPOM {
         Assert.assertEquals(userNameLoggedIn, PropertiesReader.readKey("expected_username"));
 
         DriverManager.closeBrowser();
+
     }
 }

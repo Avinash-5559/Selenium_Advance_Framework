@@ -29,7 +29,6 @@ public class TestOrangeHRMLoginPage_01 extends CommonToAllTest {
         loginOrangeHRMPage.loginToOrangeHRMCreds(PropertiesReader.readKey("ohr_username"), PropertiesReader.readKey("ohr_password"));
 
         EmployeeListHomePage employeeListHomePage = new EmployeeListHomePage(getDriver());
-
         String loggedInUserName = employeeListHomePage.loggedInUserName();
 
         LOGGER.info("Finishing the TestCases Page Object Model");
