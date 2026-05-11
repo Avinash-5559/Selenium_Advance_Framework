@@ -19,7 +19,7 @@ public class EmployeeListHomePage_PF extends CommonToAllPage {
     }
 
     //Step 1 : These are Page Locators i.e. Kind of Attributes or Instance Variable or Member Variable
-    @FindBy(xpath = "//h6[normalize-space()='PIM']")
+    @FindBy(xpath = "//h6[normalize-space()='Dashboard']")
     private WebElement userNameOnDashboard;
 
     //Step 2 : These are Page Actions i.e. Kind of Behaviours or Instance Methods or Member Methods
