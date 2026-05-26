@@ -142,3 +142,5 @@
 2026-05-10 17:24:59 INFO  TestAppVWOLoginPage_04_PropertyReader_DriverManager_CommonToAll_improvedPOM - Starting the TestCases Page Object Model
 2026-05-10 17:25:09 INFO  TestAppVWOLoginPage_04_PropertyReader_DriverManager_CommonToAll_improvedPOM - Finishing the TestCases Page Factory
 2026-05-10 17:25:11 INFO  TestAppVWOLoginPage_04_PropertyReader_DriverManager_CommonToAll_improvedPOM - Starting the TestCases Page Object Model
+2026-05-21 21:37:58 INFO  TestAppVWOLoginPage_RetryListeners_ScreenshotListeners - Starting the Testcases Page Object Model
+2026-05-21 21:38:01 INFO  TestAppVWOLoginPage_RetryListeners_ScreenshotListeners - Starting the Testcases Page Object Model
