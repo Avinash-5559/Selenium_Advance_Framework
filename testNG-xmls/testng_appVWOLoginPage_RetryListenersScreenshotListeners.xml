@@ -7,9 +7,9 @@
         <listener class-name="com.avinashsinha.listeners.ScreenshotListeners"></listener>
     </listeners>
 
-    <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/Selenium_Advance_Framework">
+    <test verbose="2" preserve-order="true" name="App VWO Login Page Retry and Screenshot Listeners Test Suite">
         <classes>
-            <class name="com.avinashsinha.tests.pom.appVWO.TestAppVWOLoginPage_RetryListeners"/>
+            <class name="com.avinashsinha.tests.pom.appVWO.TestAppVWOLoginPage_RetryListeners_ScreenshotListeners"/>
         </classes>
     </test>
 </suite>
