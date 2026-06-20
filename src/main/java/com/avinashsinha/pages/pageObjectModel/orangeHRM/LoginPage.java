@@ -1,6 +1,9 @@
 package com.avinashsinha.pages.pageObjectModel.orangeHRM;
 
 import com.avinashsinha.base.CommonToAllPage;
+import com.avinashsinha.utils.WaitHelpers;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,6 +11,8 @@ import static com.avinashsinha.utils.WaitHelpers.waitJVM;
 
 //This is Page Class
 public class LoginPage extends CommonToAllPage {
+
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class);
 
     WebDriver driver;
 
@@ -25,13 +30,14 @@ public class LoginPage extends CommonToAllPage {
 
         openOrangeHRMUrl();
 
-        waitJVM(5000);
+        WaitHelpers.presenceOfElement(driver, USERNAME);
+        LOGGER.info("Login form loaded. Entering credentials for user: {}", usr);
 
         enterInput(USERNAME, usr);
         enterInput(PASSWORD, pwd);
         clickElement(SUBMIT_BUTTON);
 
-        waitJVM(5000);
+        LOGGER.info("Login submitted for user: {}", usr);
 
     }
 
