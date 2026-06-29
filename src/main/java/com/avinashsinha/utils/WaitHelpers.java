@@ -1,9 +1,6 @@
 package com.avinashsinha.utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -93,15 +90,39 @@ public class WaitHelpers {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(elementLocation));
     }
 
+    public static WebElement visibilityOfElement(WebDriver driver, WebElement elementLocation) {
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(elementLocation));
+    }
+
     public WebElement getElement(By key) {
         return getDriver().findElement(key);
     }
 
     public static void urlContains(WebDriver driver, String locator) {
 
-        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.urlContains(locator));
 
+    }
+
+    public static boolean isElementPresent(By elementLocation) {
+        try {
+            new WebDriverWait(getDriver(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(elementLocation));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
+    public static boolean isElementPresent(WebDriver driver, By elementLocation) {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(elementLocation));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
 }
